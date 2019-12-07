@@ -3,15 +3,6 @@ import {connect} from "react-redux";
 import {addPlayer} from "../redux/actions";
 
 export class AddPlayerForm extends React.Component {
-
-
-	handleValueChange(e){
-		//console.log(e);
-		this.setState({
-			value :e.target.value
-		})
-	}
-
 	handleSubmit(e){
 		e.preventDefault();
 		//e.stopPropagation(); 이벤트가 폼으로 전파하는 것을 막아준다.
@@ -26,8 +17,8 @@ export class AddPlayerForm extends React.Component {
 		}
 
 		this.props.addPlayer(playNode.value);
-		/*//폼 초기화
-		this.setState({value : ''})*/
+		//폼 초기화
+		playNode.value = '';
 	}
 
 	render() {
